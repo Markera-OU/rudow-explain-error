@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Explain this error</title>
+<link rel="stylesheet" href="styles.css">
+<style>body{width:380px}</style>
+</head>
+<body>
+<div class="wrap">
+  <div id="result"><p class="empty">Loading…</p></div>
+  <div class="row">
+    <button id="copy" class="primary" style="display:none">Copy explanation</button>
+    <button id="options">Options</button>
+  </div>
+  <p class="note">By default this extension works fully offline. Nothing leaves your machine unless you turn on BYOK in Options.</p>
+</div>
+<script src="render.js"></script>
+<script>
+document.getElementById("options").addEventListener("click", function () {
+  chrome.runtime.openOptionsPage();
+});
+</script>
+</body>
+</html>
