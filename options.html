@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Explain this error - Options</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrap">
+  <h1>Explain this error - Options</h1>
+
+  <h2>Privacy</h2>
+  <p>By default this extension works <strong>fully offline</strong>. The built-in explainer runs on your machine and <strong>nothing leaves your machine at all</strong>: no error text, no page content, no usage data.</p>
+  <p>Optional BYOK mode below is the only exception. When you turn it on and save a key, the selected error text (and only that text) is sent to the provider you choose, OpenAI or Anthropic, so their model can explain it. Your key is stored only in chrome.storage.local on this machine and is never sent anywhere else.</p>
+
+  <h2>Optional AI mode (BYOK)</h2>
+  <label class="check"><input type="checkbox" id="enabled"> <span>Use my own API key for explanations I do not get offline. Off by default.</span></label>
+
+  <label for="provider">Provider</label>
+  <select id="provider">
+    <option value="openai">OpenAI</option>
+    <option value="anthropic">Anthropic</option>
+  </select>
+
+  <label for="apiKey">API key</label>
+  <input type="password" id="apiKey" placeholder="Paste your key here" autocomplete="off">
+  <p class="note">Stored only in chrome.storage.local on this machine. It is sent only to the provider above, and only together with the error text you selected. Remove the key here any time to stop AI mode.</p>
+
+  <label for="model">Model (optional, leave blank for the default)</label>
+  <input type="text" id="model" placeholder="e.g. gpt-4o-mini or claude-haiku-4-5">
+
+  <div class="row">
+    <button id="save" class="primary">Save</button>
+    <button id="clearKey">Remove key</button>
+  </div>
+  <p id="status" class="status"></p>
+
+  <div class="rudow"><strong>Want this automatically?</strong> Rudow watches your logs and tells you what broke, in plain English. <a href="https://rudow.ai" target="_blank" rel="noopener">rudow.ai</a></div>
+</div>
+<script src="options.js"></script>
+</body>
+</html>
