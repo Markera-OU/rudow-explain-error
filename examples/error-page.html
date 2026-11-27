@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Example error page - Rudow Explain this error</title>
+<style>
+  body { font-family: system-ui, sans-serif; max-width: 760px; margin: 40px auto; padding: 0 16px; color: #182034; }
+  pre { background: #f2f4f8; padding: 16px; border-radius: 8px; overflow-x: auto; font-size: 13px; line-height: 1.5; }
+  code { font-family: ui-monospace, Menlo, Consolas, monospace; }
+  p { line-height: 1.6; }
+</style>
+</head>
+<body>
+<h1>Example error page</h1>
+<p>Try the extension here: select any of the error blocks below, right-click, and choose <strong>Explain this error</strong>.</p>
+
+<h2>1. JavaScript TypeError</h2>
+<pre><code>TypeError: Cannot read properties of undefined (reading 'name')
+    at renderUser (app.js:42:19)
+    at loadProfile (app.js:18:5)
+    at HTMLButtonElement.onclick (index.html:12:1)</code></pre>
+
+<h2>2. Python traceback</h2>
+<pre><code>Traceback (most recent call last):
+  File "app.py", line 27, in get_user
+    return users[user_id]
+KeyError: 'user_4821'</code></pre>
+
+<h2>3. Node server error</h2>
+<pre><code>Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListeners (node:net:1939:16)
+    at listenInCluster (node:net:1995:12)
+    at Server.listen (node:net:2087:7)</code></pre>
+
+<h2>4. HTTP error from an API call</h2>
+<pre><code>Request failed with status code 429: Too Many Requests
+Retry-After: 60
+Response body: {"error": "rate limit exceeded, retry after 60 seconds"}</code></pre>
+
+<h2>5. Database connection failure</h2>
+<pre><code>Error: connect ECONNREFUSED 127.0.0.1:5432
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+Postgres connection failed: could not connect to server: Connection refused</code></pre>
+
+<h2>6. CORS error from the browser console</h2>
+<pre><code>Access to fetch at 'https://api.example.com/data' from origin 'https://app.example.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.</code></pre>
+</body>
+</html>
