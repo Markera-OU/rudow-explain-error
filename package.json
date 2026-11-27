@@ -1,0 +1,1 @@
+{"description":"Rudow Explain this error: a free, offline-first Chrome extension that explains selected error text in plain English.","license":"MIT","name":"rudow-explain-error","private":true,"scripts":{"test":"node --test test/explainer.test.js"},"version":"0.1.0"}
